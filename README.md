@@ -11,7 +11,7 @@ Prerequisites
 - Fork <https://github.com/justdevelopit/php-fms-test>
 - Clone your repository
  - This is where you will document your progress and commit the project
-- Install PHP 5.3 or greater (PHP 5.4 is preferred)
+- Install PHP 5.4 or greater
  - Alternatively create a virtual machine using Vagrant (<http://www.vagrantup.com/>) and PuPHPet (<https://puphpet.com/>)
 
 Task
@@ -19,15 +19,15 @@ Task
 
 You will be creating a "File Management System".
 
+Your git repository has two interfaces, please use these interfaces as the foundation of the task.
+
+Feel free to implement the web page as you like, we would like a simple admin panel where we can test the functionalities described in the php interfaces.
+
+You can use bootstrap as your css base. The end result should be responsive. If you use a psd as a base for the design please include it in the task.
+
 You may use a storage engine of your choice, for example MySQL, Sqlite or flat files. If you choose to use MySQL or another SQL database then please provide a schema dump.
 
-Your git repository has three interfaces, please use these interfaces as the foundation of the task.
-
-You may complete the task in any way you see fit, the resulting system can be either web or CLI based.
-
-Please **do not** use any third party frameworks.
-
-We would suggest that you use git commits in a way that allows the reviewer to understand the thought process taken to achieve each given goal. Branching models are not required but can be utilised if you like, at the very least wrapping each feature into a commit is recommended.
+You may complete the task in any way you see fit.
 
 Conclusion
 ----------
