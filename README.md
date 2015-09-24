@@ -8,7 +8,7 @@ Prerequisites
 - Install git, if you haven’t used git before see;
  - <https://help.github.com/articles/set-up-git>
  - <https://help.github.com/articles/fork-a-repo>
-- Fork <https://github.com/justdevelopit/php-fms-test>
+- Fork this repo
 - Clone your repository
  - This is where you will document your progress and commit the project
 - Install PHP 5.4 or greater
