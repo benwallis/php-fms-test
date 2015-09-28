@@ -1,0 +1,19 @@
+body {background: url('/images/bg_header2.png') top left repeat-x;}
+
+div.page-header {border:0}
+
+.active,
+a:active,
+.btn:active {
+             position:relative;
+             top:1px;
+             }
+
+#createfilebtn {margin:1em}
+
+#createfilepanel,
+#renamefilepanel {margin-top:1em}
+
+th.sort {cursor:pointer}
+
+#loaderimg {margin:0 auto}

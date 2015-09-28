@@ -1,0 +1,41 @@
+
+Options +FollowSymLinks -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^index.(php|htm?l)$ / [L,R=301]
+
+###############################################################################
+# [ REDIRECT to WWW ]
+###############################################################################
+RewriteCond %{HTTP_HOST} !^ben.php-fms-test.com [NC]
+RewriteRule (.*) http://ben.php-fms-test.com/$1 [L,QSA,R=301]
+
+###############################################################################
+# [ PREVENT PHP LOGO FROM QUERY STRING ]
+###############################################################################
+RewriteCond %{QUERY_STRING} ^=(PHPE9568F34-D428-11d2-A769-00AA001ACF42|PHPE9568F35-D428-11d2-A769-00AA001ACF42|PHPB8B5F2A0-3C92-11d3-A3A9-4C7B08C10000|PHPE9568F36-D428-11d2-A769-00AA001ACF42)$
+RewriteRule ^(.*)$ $0? [R,L]
+
+###############################################################################
+# PROTECT FILES + FOLDERS
+###############################################################################
+RewriteRule ^_(inc|php|templates) / [R,L]
+
+<Files ~ "\.(inc)$">
+  order allow,deny
+  deny from all
+</Files>
+
+###############################################################################
+# FRONT CONTROLLER
+###############################################################################
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . / [L]
+
+###############################################################################
+
+BrowserMatch "MSIE" force-no-vary
+BrowserMatch "Mozilla/4.[0-9]{2}" force-no-vary

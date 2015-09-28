@@ -1,0 +1,68 @@
+<button id="createfilebtn" class="btn btn-primary" data-toggle="collapse" data-target="#createfilepanel" aria-expanded="false" aria-controls="createfilepanel"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create New File</button>
+
+    {{CREATE_FILE_PANEL}}
+
+    {{RENAME_FILE_PANEL}}
+
+    {{FILES_TABLE}}
+
+    <div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="New File">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">New File</h4>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button id="createfilesavebtn" type="button" class="btn btn-primary">Save</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+
+    <div class="modal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="Delete File">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Delete File</h4>
+          </div>
+          <div class="modal-body">
+            <p>Are you sure you want to <strong>delete</strong> the following file?</p>
+            <ul><li></li></ul>
+            <div class="alert alert-warning" role="alert">
+                <p><strong>Please note:</strong> This action CANNOT be undone!</p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button id="modaldeletebtn" type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal" id="progressModal" tabindex="-1" role="dialog" aria-labelledby="Progress">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title text-center">Loading&hellip; <small>please wait</small></h4>
+          </div>
+          <div class="modal-body text-center">
+            <img id="loaderimg" src="/images/loader.png" width="48" height="48" alt="" />
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--
+    <div class="alert alert-danger alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Warning!</strong> Better check yourself, you're not looking too good.
+    </div>
+    -->

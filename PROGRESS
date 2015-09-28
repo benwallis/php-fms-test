@@ -1,0 +1,42 @@
+I developed the app in my local environment (Apache 2.2, PHP 5.4.5, Windows 7 x64).
+
+I don't have much experience with Object Oriented Programming. I couldn't work out what kind of architecture is needed to utilise FileInterface and FileSystemInterface.
+I've defined some very simple classes and tried to use them but most of my code is still procedural.
+I've ended up duplicating code because I don't understand the objects, and I wasted too much time trying to work it out.
+
+The only parts I managed to get to a working state are the displaying of current files and deleting files (but it's not at all secure).
+
+Generally, I try to adhere to the PHP FIG PSR coding standards but I couldn't get the namespacing or class autoloading to work.
+At first I used separate files for my own classes and placed them into a vendor namespace directory.
+However I could only get autoloading to work with FileInterface, so instead I wrote my classes in the same files as the interfaces.
+
+As I was only dealing with a single folder of files, I simply used scandir() to read them all.
+
+I made some assumptions about the task in order to simplify it.
+I assumed that this file manager is for basic management of files in a single folder, by a single trusted user.
+I wasn't sure if I was meant to create a proper login system so I didn't do any session stuff.
+
+For a simple file manager, a database didn't seem necessary so I chose to work with flat files.
+However, I can see how using a database as the storage engine could be simpler, regarding permissions/concurrency/operating systems.
+It would also be safer to reference files by id numbers rather than filenames.
+
+I setup the application in a non-OOP MVC style, with a basic front controller.
+I've used an old, basic Template class (that I've modified). I like it because it keeps markup and logic 100% separate.
+However it has no caching so a modern template system like Twig would be better.
+
+This app needs much more sanitising and validation of filenames and checking/setting permissions.
+Depending on the exact requirements of the application/intended audience, I would generally want to disallow file names that:
+ - consist only of fullstops
+ - begin or end with a fullstop/space/null
+ - contain characters other than a-z, 0-9, hypens, underscores or fullstops
+ - are longer than 30 characters
+
+I used the Bootstrap theme and a very basic page header.
+In previous projects I've used jQuery UI dialogs to good effect but Bootstrap is incompatible with jQuery UI.
+I tried using Bootstrap modals instead, but unfortunately they don't support multiple modals.
+
+I wrote some Javascript to render and sort the table of files. Normally I would add paging/filtering etc but left those bits out.
+The way that I have implemented Javascript is not the best way, it would be better to use something like Backbone/Angular.
+
+Regarding version control... Normally I try to do "atomic" commits, where each commit is a single change/feature/addition etc. but as I was confused by the OOP I wanted to experiment first.
+I've taken too long and it's not even fully functional, so I'll commit everything in one go.
